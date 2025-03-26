@@ -16,9 +16,9 @@ plt.rcParams['font.family'] = "NanumGothic"
 class PensionData():
     def __init__(self, filepath):
         self.df = pd.read_csv(os.path.join(filepath), encoding='cp949')
-        self.pattern1 = '(\([^)]+\))'
-        self.pattern2 = '(\[[^)]+\])'
-        self.pattern3 = '[^A-Za-z0-9가-힣]'
+        self.pattern1 = r'(\([^)]+\))'
+        self.pattern2 = r'(\[[^)]+\])'
+        self.pattern3 = r'[^A-Za-z0-9가-힣]'
         self.preprocess()
           
     def preprocess(self):
